@@ -1,0 +1,13 @@
+---
+title: "Untitled"
+format: html
+---
+
+```{r}
+#  Restart R and try the package
+#| eval: false
+library(bartcommute)
+bart_trip("MLBR")
+head(commutes)
+?commutes
+```
