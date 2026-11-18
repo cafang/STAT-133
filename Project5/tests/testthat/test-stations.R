@@ -1,0 +1,20 @@
+test_that("stations have the documented columns and types", {
+  stations <- bart_stations()
+  expect_equal(names(stations), c("abbr", "name", "city", "county", "lat", "lon"))
+  expect_true(nrow(stations) > 0)
+  expect_type(stations$abbr, "character")
+  expect_type(stations$name, "character")
+  expect_type(stations$city, "character")
+  expect_type(stations$county, "character")
+  expect_type(stations$lat, "double")
+  expect_type(stations$lon, "double")
+})
+
+test_that("station abbreviations are unique and coordinates are valid", {
+  stations <- bart_stations()
+  expect_equal(length(unique(stations$abbr)), nrow(stations))
+  expect_true(all(!is.na(stations$lat)))
+  expect_true(all(!is.na(stations$lon)))
+  expect_true(all(stations$lat >= -90 & stations$lat <= 90))
+  expect_true(all(stations$lon >= -180 & stations$lon <= 180))
+})
