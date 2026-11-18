@@ -1,0 +1,25 @@
+Package: bartcommute
+Title: Compare BART Commutes to Downtown Berkeley
+Version: 0.1.0
+Authors@R: person("Cathy", "Fang", email = "28hfang@berkeley.edu",
+    role = c("aut", "cre"))
+Description: Request BART stations and scheduled trips, return tidy tables,
+    and compare morning commutes to Downtown Berkeley. Includes a saved
+    snapshot of scheduled travel times and adult Clipper fares.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Depends: R (>= 4.1.0)
+LazyData: true
+Roxygen: list(markdown = TRUE)
+Imports:
+    httr2,
+    lubridate,
+    tibble
+Suggests:
+    dplyr,
+    ggplot2,
+    knitr,
+    sf,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Config/roxygen2/version: 8.1.1
